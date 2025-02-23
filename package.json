@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "version": "0.0.1",
+  "packageManager": "pnpm@10.4.1",
+  "description": "",
+  "type": "module",
+  "scripts": {},
+  "keywords": [],
+  "author": "cdl",
+  "license": "MIT",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5"
+  }
+}
