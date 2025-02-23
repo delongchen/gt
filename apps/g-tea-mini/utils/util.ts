@@ -13,7 +13,4 @@ export const formatTime = (date: Date) => {
   )
 }
 
-const formatNumber = (n: number) => {
-  const s = n.toString()
-  return s[1] ? s : '0' + s
-}
+const formatNumber = (n: number) => n < 10 ? `0${n}` : `${n}`
