@@ -1,0 +1,9 @@
+.tab-bar-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-bar-item-wrapper .text {
+  font-size: 20rpx;
+}

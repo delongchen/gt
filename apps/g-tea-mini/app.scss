@@ -1,10 +1,18 @@
-/**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
+.t-rate {
+  --td-rate-selected-color: #ffc51c;
+  --td-rate-unselected-color: #ddd;
+}
+
+.t-input {
+  --td-input-placeholder-text-color: #bbbbbb;
+  --td-input-text-color: #333333;
+}
+
+.t-tab-bar {
+  --td-tab-bar-item-color: #bbb;
+  --td-tab-bar-item-active-color: #333;
+}
+
+page {
+  --td-grid-item-text-color: #bbbbbb
+}
