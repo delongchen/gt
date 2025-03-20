@@ -2,7 +2,11 @@ import { fetchGoodsList } from '../../services/good/fetchGoods';
 import Toast from 'tdesign-miniprogram/toast/index';
 
 const fetchHomePageInfo = () => {
-
+  wx.request({
+    url: 'wx.cdl.zone/t-shop/home',
+    method: 'GET',
+    success: console.info,
+  })
 }
 
 Page({
