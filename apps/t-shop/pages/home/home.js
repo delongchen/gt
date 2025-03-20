@@ -2,10 +2,14 @@ import { fetchGoodsList } from '../../services/good/fetchGoods';
 import Toast from 'tdesign-miniprogram/toast/index';
 
 const fetchHomePageInfo = () => {
-  wx.request({
-    url: 'wx.cdl.zone/t-shop/home',
-    method: 'GET',
-    success: console.info,
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: 'https://wx.cdl.zone/home',
+      method: 'GET',
+      success: res => {
+        resolve(res.data);
+      }
+    })
   })
 }
 
@@ -13,6 +17,7 @@ Page({
   data: {
     imgSrcs: [],
     tabList: [],
+    gridItems: [],
     goodsList: [],
     goodsListLoadStatus: 0,
     pageLoading: false,
@@ -62,13 +67,15 @@ Page({
       pageLoading: true,
     });
 
-    fetchHome().then(({ swiper }) => {
-      this.setData({
-        imgSrcs: swiper,
-        pageLoading: false,
-      });
-      this.loadGoodsList(true);
-    });
+    fetchHomePageInfo()
+      .then(info => {
+        this.setData({
+          imgSrcs: info.swiperImages,
+          pageLoading: false,
+          gridItems: info.homeGridItems,
+        })
+        this.loadGoodsList(true);
+      })
   },
 
   tabChangeHandle(e) {
@@ -89,7 +96,7 @@ Page({
 
     this.setData({ goodsListLoadStatus: 1 });
 
-    const pageSize = this.goodListPagination.num;
+    const pageSize = this.goodListPagination.num ?? 4;
     let pageIndex = this.privateData.tabIndex * pageSize + this.goodListPagination.index + 1;
     if (fresh) {
       pageIndex = 0;
@@ -135,4 +142,8 @@ Page({
       url: `/pages/promotion-detail/index?promotion_id=${promotionID}`,
     });
   },
+
+  gridClickHandler(e) {
+
+  }
 });

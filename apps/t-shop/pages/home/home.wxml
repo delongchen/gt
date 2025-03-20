@@ -49,6 +49,17 @@
     </t-tabs>
   </view>
 
+  <t-grid column="{{4}}">
+    <t-grid-item
+      wx:for="{{gridItems}}"
+      wx:key="id"
+      bind:click="gridClickHandler"
+      t-class-image="image"
+      text="{{item.text}}"
+      image="{{item.image}}"
+    />
+  </t-grid>
+
   <goods-list
     wr-class="goods-list-container"
     goodsList="{{goodsList}}"
