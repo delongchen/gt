@@ -1,0 +1,17 @@
+{
+  "name": "t-shop-types",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  },
+  "private": true
+}

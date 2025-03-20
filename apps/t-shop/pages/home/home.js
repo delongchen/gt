@@ -1,6 +1,9 @@
-import { fetchHome } from '../../services/home/home';
 import { fetchGoodsList } from '../../services/good/fetchGoods';
 import Toast from 'tdesign-miniprogram/toast/index';
+
+const fetchHomePageInfo = () => {
+
+}
 
 Page({
   data: {
@@ -54,9 +57,9 @@ Page({
     this.setData({
       pageLoading: true,
     });
-    fetchHome().then(({ swiper, tabList }) => {
+
+    fetchHome().then(({ swiper }) => {
       this.setData({
-        tabList,
         imgSrcs: swiper,
         pageLoading: false,
       });
