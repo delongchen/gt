@@ -1,5 +1,6 @@
 import { items } from './items'
 
+
 Component({
   properties: {
 
@@ -9,15 +10,11 @@ Component({
     activeIndex: 0,
   },
   methods: {
-    init() {
-      console.info('init')
+    async init() {
+
     },
     async switchTab(index: number, path: string) {
-      if (index === this.data.activeIndex) return
-
-      this.setData({ activeIndex: index }, () => {
-        wx.switchTab({url: `/${path}`})
-      })
+      await wx.switchTab({url: `/${path}`})
     },
     async onTabChange(ev: any) {
       const index: number = ev.detail.value

@@ -18,7 +18,8 @@
     "strictPropertyInitialization": true,
     "lib": ["ES2020"],
     "typeRoots": [
-      "./typings"
+      "./typings",
+      "./miniprogram_npm/tdesign-miniprogram"
     ],
     "paths": {
       "tdesign-miniprogram/*": ["./miniprogram_npm/tdesign-miniprogram/*"]
